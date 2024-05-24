@@ -10,3 +10,12 @@ The `cdk.json` file tells the CDK toolkit how to execute your app.
  * `cdk diff`        compare deployed stack with current state
  * `cdk synth`       emits the synthesized CloudFormation template
  * `go test`         run unit tests
+
+## TODO List
+
+### Section 1 - DynamoDB & Inserting Users
+- [x] Add better project structure
+- [ ] Create API Handler
+- [ ] Create Database Handler
+- [ ] Create App struct
+- [ ] Enable registering users
