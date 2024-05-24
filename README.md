@@ -15,7 +15,7 @@ The `cdk.json` file tells the CDK toolkit how to execute your app.
 
 ### Section 1 - DynamoDB & Inserting Users
 - [x] Add better project structure
-- [ ] Create API Handler
-- [ ] Create Database Handler
-- [ ] Create App struct
-- [ ] Enable registering users
+- [x] Create API Handler
+- [x] Create Database Handler
+- [x] Create App struct
+- [x] Enable registering users

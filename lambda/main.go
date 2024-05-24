@@ -21,7 +21,7 @@ func HandleRequest(event MyEvent) (string, error) {
 }
 
 func main() {
-	_ = app.NewApp()
+	myApp := app.NewApp()
 
-	lambda.Start(HandleRequest) // Notice that we're not calling the function, we're passing it as a param to the AWS lambda's `Start` function
+	lambda.Start(myApp.ApiHandler.RegisterUserHandler) // Notice that we're not calling the function, we're passing it as a param to the AWS lambda's `Start` function
 }
