@@ -48,6 +48,7 @@ func NewGoCdkStack(scope constructs.Construct, id string, props *GoCdkStackProps
 		DeployOptions: &awsapigateway.StageOptions{
 			LoggingLevel: awsapigateway.MethodLoggingLevel_INFO,
 		},
+		CloudWatchRole: jsii.Bool(true),
 	})
 
 	// Bind functions to api gateway
