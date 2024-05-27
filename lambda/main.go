@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"lambda-func/app"
+	"net/http"
 
+	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
@@ -23,5 +25,17 @@ func HandleRequest(event MyEvent) (string, error) {
 func main() {
 	myApp := app.NewApp()
 
-	lambda.Start(myApp.ApiHandler.RegisterUserHandler) // Notice that we're not calling the function, we're passing it as a param to the AWS lambda's `Start` function
+	// lambda.Start(myApp.ApiHandler.RegisterUserHandler) // Notice that we're not calling the function, we're passing it as a param to the AWS lambda's `Start` function
+	
+	lambda.Start(func(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+		switch request.Path {
+		case "/register":
+			return myApp.ApiHandler.RegisterUserHandler(request)
+		default:
+			return events.APIGatewayProxyResponse {
+				Body: "Not found",
+				StatusCode: http.StatusNotFound,
+			}, nil
+		}
+	})
 }
