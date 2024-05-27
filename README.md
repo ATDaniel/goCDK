@@ -19,3 +19,10 @@ The `cdk.json` file tells the CDK toolkit how to execute your app.
 - [x] Create Database Handler
 - [x] Create App struct
 - [x] Enable registering users
+
+### Section 2 - Beyond the Basics
+- [ ] Database Interface
+- [ ] hash user passwords
+- [ ] Create API router with Gateway
+- [ ] Refactor RegisterUsers
+- [ ] Create new LoginUsers function
