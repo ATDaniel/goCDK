@@ -1,15 +1,7 @@
-# Welcome to your CDK Go project!
+# Basic Go Serverless API
 
-This is a blank project for CDK development with Go.
+This is a basic REST API written in Go, used as a way to familiarize myself with writing backend services in Go. It uses AWS Lambda, DynamoDB, and API Gateway
 
-The `cdk.json` file tells the CDK toolkit how to execute your app.
-
-## Useful commands
-
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
- * `go test`         run unit tests
 
 ## TODO List
 
@@ -21,8 +13,8 @@ The `cdk.json` file tells the CDK toolkit how to execute your app.
 - [x] Enable registering users
 
 ### Section 2 - Beyond the Basics
-- [ ] Database Interface
-- [ ] hash user passwords
-- [ ] Create API router with Gateway
-- [ ] Refactor RegisterUsers
-- [ ] Create new LoginUsers function
+- [x] Database Interface
+- [x] hash user passwords
+- [x] Create API router with Gateway
+- [x] Refactor RegisterUsers
+- [x] Create new LoginUsers function
