@@ -1,9 +1,11 @@
 package types
 
 import (
+	"os"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
+	"github.com/joho/godotenv"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -38,6 +40,7 @@ func ValidatePassword(hashedPassword, plainTextPassword string) bool {
 func CreateToken(user User) string {
 	now := time.Now()
 	validUntil := now.Add(time.Hour * 1).Unix()
+	err := godotenv.Load()
 
 	claims := jwt.MapClaims {
 		"user": user.Username,
@@ -45,7 +48,7 @@ func CreateToken(user User) string {
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims, nil)
-	secret := "secret" // TODO this should be stored in a .env or AWS secret manager. It's the signing method
+	secret := os.Getenv("JWT_SECRET")
 
 	tokenString, err := token.SignedString([]byte(secret))
 	if err != nil {
